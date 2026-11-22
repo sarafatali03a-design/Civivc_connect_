@@ -11,6 +11,7 @@ body {
     background-image:url("background.jpeg");
     backgroud-size:cover;
     background-position:center;
+    background-repeat:no-repeat;
     background-attachment:fixed;
     color: white;
     line-height: 1.6;
