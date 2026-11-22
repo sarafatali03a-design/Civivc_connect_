@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicConnect - Public Facility Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Civic<span>Connect</span></div>
+            <nav>
+                <button onclick="showPage('home')">Home</button>
+                <button onclick="showPage('facilities')">Facilities</button>
+                <button onclick="showPage('feedback')">Give Feedback</button>
+                <button onclick="showPage('track')">Track Feedback</button>
+                <button onclick="showPage('dashboard')">Dashboard</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HOME PAGE -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="hero-text">
+                    <p class="tag">YOUR VOICE MATTERS</p>
+                    <h1>Help make public services <span>better.</span></h1>
+                    <p>Share your experience with public facilities. Your feedback helps identify problems and improve everyday services.</p>
+                    <button class="primary-button" onclick="showPage('feedback')">Give Feedback</button>
+                    <button class="outline-button" onclick="showPage('facilities')">Explore Facilities</button>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-icon">🏙️</div>
+                    <h2>A better community starts with you</h2>
+                    <p>Report an issue, share a suggestion, and follow its progress.</p>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card"><h2 id="homeTotal">0</h2><p>Feedback received</p></div>
+                <div class="stat-card"><h2 id="homePending">0</h2><p>Pending feedback</p></div>
+                <div class="stat-card"><h2 id="homeResolved">0</h2><p>Resolved feedback</p></div>
+            </div>
+
+            <div class="section-heading">
+                <p class="tag">GET STARTED</p>
+                <h2>How does it work?</h2>
+            </div>
+            <div class="steps">
+                <div class="step-card"><div class="step-number">1</div><h3>Choose a facility</h3><p>Select the public service you want to share feedback about.</p></div>
+                <div class="step-card"><div class="step-number">2</div><h3>Tell us your experience</h3><p>Describe the issue or share a suggestion with a rating.</p></div>
+                <div class="step-card"><div class="step-number">3</div><h3>Track your feedback</h3><p>Use your reference number to check its current status.</p></div>
+            </div>
+        </section>
+
+        <!-- FACILITIES PAGE -->
+        <section id="facilities" class="page">
+            <div class="page-heading">
+                <p class="tag">PUBLIC SERVICES</p>
+                <h1>Explore Facilities</h1>
+                <p>Select a facility to give feedback about your experience.</p>
+                <button class="home-button" onclick="showPage('home')">← Back to Home</button>
+            </div>
+            <div class="filter-area">
+                <input type="text" id="searchBox" placeholder="Search facilities..." onkeyup="filterFacilities()">
+                <select id="categoryFilter" onchange="filterFacilities()">
+                    <option value="all">All categories</option>
+                    <option value="Health">Health</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Cleanliness">Cleanliness</option>
+                    <option value="Education">Education</option>
+                    <option value="Utilities">Utilities</option>
+                </select>
+            </div>
+            <div class="facility-grid" id="facilityList">
+                <div class="facility-card" data-category="Health"><div class="facility-icon">🏥</div><h3>Government Hospital</h3><p>Healthcare services and cleanliness.</p><button onclick="chooseFacility('Government Hospital')">Give feedback →</button></div>
+                <div class="facility-card" data-category="Transport"><div class="facility-icon">🚌</div><h3>Bus Stand</h3><p>Bus services, waiting areas and facilities.</p><button onclick="chooseFacility('Bus Stand')">Give feedback →</button></div>
+                <div class="facility-card" data-category="Cleanliness"><div class="facility-icon">🧹</div><h3>Public Park</h3><p>Park maintenance, lights and cleanliness.</p><button onclick="chooseFacility('Public Park')">Give feedback →</button></div>
+                <div class="facility-card" data-category="Education"><div class="facility-icon">🏫</div><h3>Government School</h3><p>School facilities and basic infrastructure.</p><button onclick="chooseFacility('Government School')">Give feedback →</button></div>
+                <div class="facility-card" data-category="Utilities"><div class="facility-icon">💧</div><h3>Water Supply</h3><p>Water availability and supply problems.</p><button onclick="chooseFacility('Water Supply')">Give feedback →</button></div>
+                <div class="facility-card" data-category="Cleanliness"><div class="facility-icon">🚮</div><h3>Public Toilet</h3><p>Cleanliness and maintenance of public toilets.</p><button onclick="chooseFacility('Public Toilet')">Give feedback →</button></div>
+            </div>
+            <p id="noFacilities" class="message hidden">No facilities found. Try another search.</p>
+        </section>
+
+        <!-- FEEDBACK PAGE -->
+        <section id="feedback" class="page">
+            <div class="page-heading">
+                <p class="tag">SHARE YOUR EXPERIENCE</p>
+                <h1>Give Feedback</h1>
+                <p>Fill in the details below. All fields are required.</p>
+                <button class="home-button" onclick="showPage('home')">← Back to Home</button>
+            </div>
+            <form id="feedbackForm" class="form-card">
+                <label for="personName">Your name</label>
+                <input type="text" id="personName" placeholder="Enter your name" required>
+
+                <label for="facilityName">Select facility</label>
+                <select id="facilityName" required>
+                    <option value="">Choose a facility</option>
+                    <option>Government Hospital</option>
+                    <option>Bus Stand</option>
+                    <option>Public Park</option>
+                    <option>Government School</option>
+                    <option>Water Supply</option>
+                    <option>Public Toilet</option>
+                </select>
+
+                <label>Rate your experience</label>
+                <div class="rating" id="ratingButtons">
+                    <button type="button" onclick="setRating(1)">★</button>
+                    <button type="button" onclick="setRating(2)">★</button>
+                    <button type="button" onclick="setRating(3)">★</button>
+                    <button type="button" onclick="setRating(4)">★</button>
+                    <button type="button" onclick="setRating(5)">★</button>
+                </div>
+                <p id="ratingText" class="small-note">Select a rating from 1 to 5 stars.</p>
+
+                <label for="feedbackType">Feedback type</label>
+                <select id="feedbackType" required>
+                    <option value="">Choose type</option>
+                    <option>Problem / Complaint</option>
+                    <option>Suggestion</option>
+                    <option>Appreciation</option>
+                </select>
+
+                <label for="feedbackMessage">Your feedback</label>
+                <textarea id="feedbackMessage" rows="5" placeholder="Describe your experience..." required></textarea>
+
+                <button type="submit" class="primary-button full-button">Submit Feedback</button>
+                <p id="formMessage" class="message"></p>
+            </form>
+        </section>
+
+        <!-- TRACK PAGE -->
+        <section id="track" class="page">
+            <div class="page-heading">
+                <p class="tag">CHECK PROGRESS</p>
+                <h1>Track Feedback</h1>
+                <p>Enter the reference number you received after submitting feedback.</p>
+                <button class="home-button" onclick="showPage('home')">← Back to Home</button>
+            </div>
+            <div class="track-card">
+                <label for="referenceInput">Feedback reference number</label>
+                <input type="text" id="referenceInput" placeholder="Example: CC1001">
+                <button class="primary-button full-button" onclick="trackFeedback()">Check Status</button>
+                <div id="trackResult"></div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD PAGE -->
+        <section id="dashboard" class="page">
+            <div class="page-heading">
+                <p class="tag">FEEDBACK OVERVIEW</p>
+                <h1>Dashboard</h1>
+                <p>A simple overview of feedback submitted in this browser.</p>
+                <button class="home-button" onclick="showPage('home')">← Back to Home</button>
+            </div>
+            <div class="stats dashboard-stats">
+                <div class="stat-card"><h2 id="dashTotal">0</h2><p>Total feedback</p></div>
+                <div class="stat-card"><h2 id="dashPending">0</h2><p>Pending</p></div>
+                <div class="stat-card"><h2 id="dashResolved">0</h2><p>Resolved</p></div>
+            </div>
+            <div class="table-card">
+                <h2>Recent Feedback</h2>
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr><th>Reference</th><th>Facility</th><th>Rating</th><th>Status</th><th>Update status</th></tr></thead>
+                        <tbody id="feedbackTable"></tbody>
+                    </table>
+                </div>
+                <p id="emptyTable" class="message">No feedback submitted yet.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 CivicConnect | Public Facility Feedback System</p>
+        <button onclick="showPage('home')">Home ↑</button>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
