@@ -8,7 +8,10 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: darknavyblue;
+    background-image:url("background.jpeg");
+    backgroud-size:cover;
+    background-position:center;
+    background-attachment:fixed;
     color: white;
     line-height: 1.6;
 }
@@ -61,10 +64,7 @@ main {
 }
 
 .hero {
-    background-image:url("background.jpeg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+    background-color:white;
     border: 1px solid cyan;
     padding: 35px;
     display: flex;
