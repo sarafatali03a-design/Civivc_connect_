@@ -61,7 +61,10 @@ main {
 }
 
 .hero {
-    background-color: darkslategray;
+    background-image:url("background.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
     border: 1px solid cyan;
     padding: 35px;
     display: flex;
