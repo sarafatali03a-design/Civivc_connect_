@@ -1,23 +1,23 @@
 /* CivicConnect - simple beginner CSS */
 
 /* Basic page style */
-* {
+ * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: white;
-    color: black;
+    background-color: midnightblue;
+    color: white;
     line-height: 1.6;
 }
 
 /* Header and navigation */
 header, footer {
-    background-color: white;
+    background-color: darkslateblue;
     padding: 15px 6%;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid cyan;
 }
 
 .header-content, nav, footer {
@@ -34,19 +34,19 @@ header, footer {
 }
 
 .logo span, .hero h1 span {
-    color: darkgreen;
+    color: cyan;
 }
 
 nav button, footer button {
     background: none;
     border: 0;
-    color: black;
+    color: white;
     padding: 9px;
     cursor: pointer;
 }
 
 nav button:hover, footer button:hover {
-    color: green;
+    color: cyan;
 }
 
 /* Main content */
@@ -61,9 +61,8 @@ main {
 }
 
 .hero {
-    background-color: lightgreen;
-    border: 1px solid green;
-    border-radius: 12px;
+    background-color: darkslategray;
+    border: 1px solid cyan;
     padding: 35px;
     display: flex;
     justify-content: space-between;
@@ -80,15 +79,15 @@ main {
 }
 
 .tag {
-    color: darkgreen;
+    color: cyan;
     font-weight: bold;
 }
 
 .hero-card, .step-card, .facility-card,
 .form-card, .track-card, .table-card, .stat-card {
-    background-color: white;
-    border: 1px solid lightgray;
-    
+    background-color: darkslategray;
+    border: 1px solid slategray;
+
     padding: 20px;
     margin-bottom: 15px;
 }
@@ -106,21 +105,21 @@ button {
 .primary-button, .outline-button, .home-button {
     padding: 10px 16px;
     margin: 5px;
-    border-radius: 6px;
+
     cursor: pointer;
 }
 
 .primary-button {
-    background-color: green;
-    color: white;
-    border: 1px solid green;
+    background-color: cyan;
+    color: black;
+    border: 1px solid cyan;
     font-weight: bold;
 }
 
 .outline-button, .home-button {
     background: none;
-    color: darkgreen;
-    border: 1px solid green;
+    color: cyan;
+    border: 1px solid cyan;
 }
 
 /* Cards and sections */
@@ -137,7 +136,7 @@ button {
 
 .stat-card h2, .section-heading h2,
 .page-heading h1, .facility-card h3, th {
-    color: darkgreen;
+    color: cyan;
 }
 
 .section-heading, .page-heading {
@@ -145,7 +144,7 @@ button {
 }
 
 .step-number {
-    color: green;
+    color: cyan;
     font-weight: bold;
     font-size: 22px;
 }
@@ -161,10 +160,10 @@ input, select, textarea {
     width: 100%;
     padding: 10px;
     margin: 6px 0 14px;
-    background-color: white;
+    background-color: black;
     color: white;
-    border: 1px solid lightgray;
-    border-radius: 6px;
+    border: 1px solid slategray;
+
 }
 
 .form-card, .track-card {
@@ -183,7 +182,7 @@ input, select, textarea {
 }
 
 .rating button {
-    background-color:lightgray;
+    background-color: darkslategray;
     color: gray;
     border: 0;
     padding: 8px;
@@ -195,7 +194,7 @@ input, select, textarea {
 }
 
 .message, .small-note {
-    color: gray;
+    color: lightgray;
 }
 
 /* Table and footer */
@@ -210,12 +209,12 @@ table {
 
 th, td {
     padding: 10px;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid slategray;
     text-align: left;
 }
 
 footer {
-    border-top: 1px solid lightgray;
+    border-top: 1px solid cyan;
 }
 
 /* Mobile screen support */
