@@ -34,7 +34,7 @@ header, footer {
 }
 
 .logo span, .hero h1 span {
-    color: #00e5ff;
+    color: darkgreen;
 }
 
 nav button, footer button {
