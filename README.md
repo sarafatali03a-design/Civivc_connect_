@@ -25,8 +25,8 @@ Team Members and Contributions
 
 Name| Registration Number| Work
 Member 1: [Sarafat Ali]| [12622009]| HTML
-Member 2: [Mohammad Faheem AP]| [12623812]| CSS
-Member 3: [Mohammad Sadin Cherukattu]| [12622295]| JavaScript
+Member 2: [Muhammed Faheem AP]| [12623812]| CSS
+Member 3: [Mohammed Sadin Cherukattu]| [12622295]| JavaScript
 
 How to Run
 
