@@ -1,0 +1,238 @@
+/* CivicConnect - simple beginner CSS */
+
+/* Basic page style */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #081323;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Header and navigation */
+header, footer {
+    background-color: #10243b;
+    padding: 15px 6%;
+    border-bottom: 1px solid #00d9ff;
+}
+
+.header-content, nav, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span, .hero h1 span {
+    color: #00e5ff;
+}
+
+nav button, footer button {
+    background: none;
+    border: 0;
+    color: white;
+    padding: 9px;
+    cursor: pointer;
+}
+
+nav button:hover, footer button:hover {
+    color: #00e5ff;
+}
+
+/* Main content */
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.page {
+    display: none;
+}
+
+.hero {
+    background-color: #122d49;
+    border: 1px solid #00d9ff;
+    border-radius: 12px;
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.tag {
+    color: #00e5ff;
+    font-weight: bold;
+}
+
+.hero-card, .step-card, .facility-card,
+.form-card, .track-card, .table-card, .stat-card {
+    background-color: #10243b;
+    border: 1px solid #294763;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.hero-icon, .facility-icon {
+    font-size: 35px;
+}
+
+/* Buttons */
+button {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.primary-button, .outline-button, .home-button {
+    padding: 10px 16px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.primary-button {
+    background-color: #00d9ef;
+    color: #081323;
+    border: 1px solid #00e5ff;
+    font-weight: bold;
+}
+
+.outline-button, .home-button {
+    background: none;
+    color: #00e5ff;
+    border: 1px solid #00e5ff;
+}
+
+/* Cards and sections */
+.stats, .steps, .facility-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.stat-card {
+    text-align: center;
+}
+
+.stat-card h2, .section-heading h2,
+.page-heading h1, .facility-card h3, th {
+    color: #00e5ff;
+}
+
+.section-heading, .page-heading {
+    margin: 25px 0;
+}
+
+.step-number {
+    color: #00e5ff;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* Forms and search */
+.filter-area {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0 14px;
+    background-color: #081323;
+    color: white;
+    border: 1px solid #34506d;
+    border-radius: 6px;
+}
+
+.form-card, .track-card {
+    max-width: 650px;
+    margin: 20px auto;
+}
+
+.form-card label, .track-card label {
+    display: block;
+    font-weight: bold;
+}
+
+.rating {
+    display: flex;
+    gap: 8px;
+}
+
+.rating button {
+    background-color: #20334d;
+    color: #718096;
+    border: 0;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.full-button {
+    width: 100%;
+}
+
+.message, .small-note {
+    color: #a8bad1;
+}
+
+/* Table and footer */
+.table-scroll {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #29415d;
+    text-align: left;
+}
+
+footer {
+    border-top: 1px solid #00d9ff;
+}
+
+/* Mobile screen support */
+@media (max-width: 700px) {
+    .hero {
+        display: block;
+    }
+
+    .stats, .steps, .facility-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-area {
+        display: block;
+    }
+
+    main {
+        width: 94%;
+    }
+}
